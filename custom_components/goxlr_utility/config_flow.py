@@ -65,7 +65,7 @@ async def validate_input(
 
     return {
         "title": f"{mixer.hardware.usb_device.manufacturer_name} - {mixer.hardware.usb_device.product_name}",
-        "identifier": mixer.hardware.serial_number,
+        "identifier": f"{mixer.hardware.serial_number}-{data["host"]}",
     }
 
 
