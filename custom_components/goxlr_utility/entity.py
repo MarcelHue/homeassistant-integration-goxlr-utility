@@ -52,7 +52,7 @@ class GoXLRUtilityEntity(CoordinatorEntity[GoXLRUtilityDataUpdateCoordinator]):
         self._hw_version = ".".join(
             [str(item) for item in coordinator.data.hardware.usb_device.version]
         )
-        self._identifier = coordinator.data.hardware.serial_number
+        self._identifier = f"{coordinator.data.hardware.serial_number}-{entry_data[CONF_HOST]}",
         self._manufacturer = coordinator.data.hardware.usb_device.manufacturer_name
         self._model = coordinator.data.hardware.usb_device.product_name
 
